@@ -8,15 +8,17 @@ import AppContext from "./context";
 import Footer from "./footer";
 
 const Layout = (props) => {
-const title = "Welcome to Nextjs";
-const {user} = useContext(AppContext);
+  const title = "Welcome to Nextjs";
+  const { user, setUser } = useContext(AppContext);
   return (
-    <div style={{
-      backgroundColor: "#F0F8F5",
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh",
-    }}>
+    <div
+      style={{
+        backgroundColor: "#F0F8F5",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <Head>
         <title>{title}</title>
         <meta charSet="utf-8" />
@@ -62,7 +64,7 @@ const {user} = useContext(AppContext);
                 <a
                   className="nav-link"
                   onClick={() => {
-                    logout();
+                    // logout();
                     setUser(null);
                   }}
                 >
@@ -78,7 +80,7 @@ const {user} = useContext(AppContext);
         </Nav>
       </header>
       <div className="container-fluid" style={{ padding: "0px", flex: 1 }}>
-      <Container>{props.children}</Container>
+        <Container>{props.children}</Container>
       </div>
       <Footer />
     </div>
